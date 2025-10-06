@@ -19,8 +19,10 @@ function NavSearch() {
     replace(`/products?${params.toString()}`)
   }, 3000)
   useEffect(() => {
-    if (!searchParams.get('search')) setSearch('')
-  }, [searchParams.get('search')])
+    if (!searchParams.get('search')) {
+      setSearch('')
+    }
+  }, [searchParams])
   return (
     <Input
       type='search'
