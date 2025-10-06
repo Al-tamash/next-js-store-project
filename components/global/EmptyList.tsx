@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 
 function EmptyList({
-  heading,
+  heading = 'No Products',
   className,
 }: {
   heading?: string
