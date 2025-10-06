@@ -2,6 +2,7 @@ import FavoriteToggleButton from '@/components/products/FavoriteToggleButton'
 import AddToCart from '@/components/single-product/AddToCart'
 import BreadCrumbs from '@/components/single-product/BreadCrumbs'
 import ProductRating from '@/components/single-product/ProductRating'
+import ShareButton from '@/components/single-product/ShareButton'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { formatCurrency } from '@/prisma/format'
 import { fetchSingleProduct } from '@/utils/actions'
@@ -33,6 +34,7 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
           <div className='flex gap-x-8 items-center'>
             <h1 className='capitalize text-3xl font-bold'>{name}</h1>
             <FavoriteToggleButton productId={productId} />
+            <ShareButton name={products.name} productId={params.id} />
           </div>
           <ProductRating productId={productId} />
           <h4 className='text-xl mt-2'>{company}</h4>
